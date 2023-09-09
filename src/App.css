@@ -24,7 +24,7 @@
   font-size: 24px;
   font-weight: 700;
   color: var(--accent);
-  line-height: 26px;
+  line-height: 28px;
   letter-spacing: -0.4px;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .generator {
-  width: 100%;
+  /* width: 100%; */
   display: grid;
   gap: 16px;
   text-align: center;
@@ -368,11 +368,8 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-  .App {
-    padding: 20px 30px;
-  }
-  .container {
-    margin: 0 20px;
+  .generator {
+    margin: 0 50px;
   }
 
   .generated {
