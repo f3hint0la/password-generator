@@ -42,9 +42,10 @@
 }
 
 .generator {
-  width: 100%;
-  display: grid;
+  /* width: 400px; */
+  /* display: grid; */
   gap: 16px;
+  align-items: center;
   text-align: center;
   justify-content: center;
 }
@@ -53,6 +54,7 @@
   position: relative;
   display: flex;
   padding: 25px 30px;
+  margin-bottom: 50px;
   width: 600px;
   background-color: var(--background-secondary);
   border-radius: 10px;
