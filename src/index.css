@@ -1,13 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --background-primary: #111827;
+  --background-secondary: #000009ff;
+  --heading-color: #beb7dfff;
+  --input-color: #0d1821ff;
+  --accent: #fca311;
+  --accent-alt: #635617;
+  --misc-color: #9ca3af;
+  --font-color: #beb7dfff;
+  --font-color-2: #ccc;
+}
+
+[data-theme="light"] {
+  --background-primary: #ffffff;
+  --background-secondary: #000009ff;
+  --heading-color: #000009ff;
+  --input-color: #0d1821ff;
+  --accent: #fca311;
+  --accent-alt: #635617;
+  --misc-color: #9ca3af;
+  --font-color: #beb7dfff;
+  --font-color-2: #ccc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

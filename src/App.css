@@ -1,38 +1,386 @@
 .App {
+  min-height: 100vh;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background: var(--background-primary);
+  overflow: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.header {
+  padding: 25px;
+  margin: 16px 0px;
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header h2 {
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 26px;
+  letter-spacing: -0.4px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header h1 {
+  color: var(--heading-color);
+  font-weight: 700;
+  font-size: 45px;
+  margin-bottom: 16px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.generator {
+  width: 100%;
+  display: grid;
+  gap: 16px;
+  text-align: center;
+  justify-content: center;
+}
+
+.generated {
+  position: relative;
   display: flex;
-  flex-direction: column;
+  padding: 25px 30px;
+  width: 600px;
+  background-color: var(--background-secondary);
+  border-radius: 10px;
+}
+
+.password {
+  color: var(--font-color);
+  font-weight: 700;
+  /* overflow: hidden; */
+}
+
+.copy-btn {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  width: 20px;
+  height: 40px;
+  background: none;
+  border: none;
+  color: var(--misc-color);
+  cursor: pointer;
+}
+
+.redo-btn {
+  position: absolute;
+  top: 12px;
+  right: 50px;
+  width: 20px;
+  height: 40px;
+  background: none;
+  border: none;
+  color: var(--misc-color);
+  cursor: pointer;
+}
+
+.copy-btn :hover,
+.copy-btn :focus,
+.redo-btn :hover,
+.redo-btn :focus {
+  color: var(--accent);
+}
+
+.config {
+  position: relative;
+  width: 100%;
+  padding: 25px;
+  margin: 16px 0;
+  color: var(--font-color);
+  background-color: var(--background-secondary);
+  border-radius: 10px;
+}
+
+.heading {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.passwordLength {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin: 18px 0;
+  width: 100%;
+  justify-content: center;
+}
+
+.lengthButton {
+  color: white;
+  font-size: 25px;
+  font-weight: 700;
+  padding: 0px 10px;
+  margin: 0px 8px;
+  background: var(--accent);
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.lengthButton:first-child {
+  padding: 0px 13px;
+}
+
+.lengthButton:hover {
+  background: var(--font-color);
+  color: var(--background-secondary);
+}
+
+.passwordLength input {
+  color: var(--font-color);
+  background-color: var(--input-color);
+  font-weight: 700;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  padding: 8px 0px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  border-radius: 5px;
+  border: 1.5px solid var(--accent);
+}
+
+.customSettings {
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.settings {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-left: 40px;
+  font-weight: 600;
+}
+
+label {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  margin: 0px 320px;
+}
+
+.settings input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+label span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 2px solid var(--misc-color);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+label span::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  bottom: 5px;
+  width: 10px;
+  height: 25px;
+  border: solid var(--accent);
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: width 0.5s, height 0.5s, opacity 0.5s;
+}
+
+input:checked ~ span::after {
+  width: 10px;
+  height: 25px;
+  opacity: 1;
+}
+
+.generate-btn {
   color: white;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 8px 30px;
+  margin-top: 25px;
+  background: var(--accent);
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.generate-btn:hover {
+  background: var(--font-color);
+  color: var(--background-secondary);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.pwd-label {
+  font-size: 16px;
+  color: var(--font-color);
+}
+
+.pwd-label strong {
+  margin-left: 5px;
+  font-weight: 700;
+}
+
+.password-strength-bar {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  background-color: var(--font-color-2);
+}
+
+.password-strength-bar::-webkit-progress-bar {
+  background-color: var(--font-color-2);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.password-strength-bar::-webkit-progress-value {
+  background-size: 30px 18px, 100% 100%, 100% 100%;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.strength-Poor::-webkit-progress-value {
+  background-color: #e20b07;
+}
+
+.strength-Poor::-webkit-progress-bar {
+  width: 20%;
+}
+
+.strength-Weak::-webkit-progress-value {
+  background-color: #ff7a00;
+}
+
+.strength-Weak::-webkit-progress-bar {
+  width: 40%;
+}
+
+.strength-Fair::-webkit-progress-value {
+  background-color: #ebbd04;
+}
+
+.strength-Fair::-webkit-progress-bar {
+  width: 60%;
+}
+
+.strength-Good::-webkit-progress-value {
+  background-color: #0b75ed;
+}
+
+.strength-Good::-webkit-progress-bar {
+  width: 80%;
+}
+
+.strength-Strong::-webkit-progress-value {
+  background-color: #01a917;
+}
+
+.strength-Strong::-webkit-progress-bar {
+  width: 100%;
+}
+
+.strength-Poor {
+  color: #e20b07;
+}
+
+.strength-Weak {
+  color: #ff7a00;
+}
+
+.strength-Fair {
+  color: #ebbd04;
+}
+
+.strength-Good {
+  color: #0b75ed;
+}
+
+.strength-Strong {
+  color: #01a917;
+}
+
+.tips {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  padding: 15px;
+  margin: 16px 0;
+  color: var(--font-color-2);
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.tips-info {
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  margin: 40px;
+  width: 400px;
+  height: 200px;
+  background-color: var(--accent-alt);
+  border-radius: 20px;
+}
+
+.footer {
+  padding: 50px 0;
+  text-align: center;
+  font-size: 14px;
+  color: var(--font-color);
+}
+
+.icon {
+  color: crimson;
+  margin: 0 4px;
+}
+
+a {
+  color: var(--accent);
+}
+
+@media screen and (max-width: 768px) {
+  .generated {
+    width: 480px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .tips {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tips-info {
+    width: 500px;
+    margin: 25px;
+    padding: 40px 40px;
+    height: 100%;
   }
 }
