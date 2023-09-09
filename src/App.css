@@ -42,7 +42,7 @@
 }
 
 .generator {
-  /* width: 100%; */
+  width: 100%;
   display: grid;
   gap: 16px;
   text-align: center;
@@ -61,7 +61,7 @@
 .password {
   color: var(--font-color);
   font-weight: 700;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .copy-btn {
