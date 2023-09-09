@@ -11,7 +11,6 @@ function App() {
           <h2>Password Generator Tool</h2>
           <h1>Generate a Secure Password</h1>
         </div>
-        <section className="prompt"></section>
 
         <Generator />
         <Tips />

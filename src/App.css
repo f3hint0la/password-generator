@@ -8,7 +8,7 @@
 }
 
 .container {
-  margin: 0 auto;
+  margin: 0 50px;
   padding-top: 40px;
 }
 
@@ -368,10 +368,6 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-  .container {
-    margin: 0 40px;
-  }
-
   .generated {
     width: 480px;
   }
