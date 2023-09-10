@@ -343,7 +343,7 @@ input:checked ~ span::after {
   text-align: center;
   padding: 40px;
   margin: 40px;
-  height: 200px;
+  height: auto;
   background-color: var(--accent-alt);
   border-radius: 20px;
 }
