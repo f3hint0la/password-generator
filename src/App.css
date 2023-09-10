@@ -42,10 +42,9 @@
 }
 
 .generator {
-  /* width: 400px; */
-  /* display: grid; */
+  width: 100%;
+  display: grid;
   gap: 16px;
-  align-items: center;
   text-align: center;
   justify-content: center;
 }
@@ -54,7 +53,6 @@
   position: relative;
   display: flex;
   padding: 25px 30px;
-  margin-bottom: 50px;
   width: 600px;
   background-color: var(--background-secondary);
   border-radius: 10px;
@@ -63,7 +61,7 @@
 .password {
   color: var(--font-color);
   font-weight: 700;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .copy-btn {
@@ -333,9 +331,8 @@ input:checked ~ span::after {
 .tips {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* width: 100%; */
   padding: 15px;
-  margin: 16px 0;
+  margin: 16px 20px;
   color: var(--font-color-2);
   align-items: center;
   justify-content: center;
