@@ -36,7 +36,6 @@
 }
 
 .wrapper {
-  width: 100%;
   text-align: center;
   justify-content: center;
 }
@@ -61,7 +60,7 @@
 .password {
   color: var(--font-color);
   font-weight: 700;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .copy-btn {
@@ -97,7 +96,7 @@
 
 .config {
   position: relative;
-  /* width: 100%; */
+  width: 100%;
   padding: 25px;
   margin: 16px 0;
   color: var(--font-color);
@@ -116,7 +115,7 @@
   display: flex;
   flex-direction: row;
   margin: 18px 0;
-  /* width: 100%; */
+  width: 100%;
   justify-content: center;
 }
 
@@ -344,7 +343,6 @@ input:checked ~ span::after {
   text-align: center;
   padding: 40px;
   margin: 40px;
-  width: 400px;
   height: 200px;
   background-color: var(--accent-alt);
   border-radius: 20px;
@@ -367,12 +365,12 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-  .generator {
-    margin: 0 50px;
+  .generated {
+    width: auto;
   }
 
-  .generated {
-    width: 480px;
+  label {
+    margin: 0px 150px;
   }
 
   .tips {
@@ -381,9 +379,8 @@ a {
   }
 
   .tips-info {
-    width: 500px;
+    width: auto;
     margin: 25px;
-    padding: 40px 40px;
     height: 100%;
   }
 }
